@@ -2,20 +2,24 @@
 
 ## Overview
 
-This document defines the official standard for all Knowledge documents within the Samiyah AI System.
+This document defines the official standard for every Knowledge document within the Samiyah AI System.
 
-Every file stored in the `knowledge/` directory must follow this specification.
+All files inside the knowledge directory must follow this specification.
 
-The purpose of this standard is to ensure:
+The objective is to ensure:
 
 - Consistent document structure
 - Efficient AI retrieval
 - Dynamic Prompt Assembly
-- Minimal token consumption
-- Easy maintenance
+- Low token consumption
+- High maintainability
 - Future RAG compatibility
+- AI Memory compatibility
+- Multi-Agent collaboration
 
-Knowledge is considered a long-term business asset and should be reusable across all AI Agents.
+Knowledge is considered a long-term business asset.
+
+It should be written once and reused everywhere.
 
 ---
 
@@ -31,46 +35,85 @@ Every Knowledge document must follow these principles.
 - Expandable
 - AI Readable
 - Human Readable
+- Machine Readable
 
-Each document should describe only one business topic.
+One document should describe only one business topic.
 
-Never mix multiple unrelated topics in one document.
+Never combine unrelated knowledge.
+
+---
+
+# Standard Metadata
+
+Every Knowledge document should begin with metadata.
+
+```yaml
+id:
+title:
+category:
+priority:
+status:
+version:
+owner:
+
+tags:
+
+called_by:
+
+depends_on:
+
+related_templates:
+
+related_playbooks:
+
+related_workflows:
+
+last_updated:
+```
+
+Metadata allows future AI systems to identify the document without reading the entire file.
 
 ---
 
 # Standard Document Structure
 
-Every Knowledge document should follow this structure.
-
 ## 1. Overview
 
-Brief introduction explaining the purpose of the document.
+Brief introduction.
+
+Explain what this knowledge describes.
 
 ---
 
 ## 2. Business Knowledge
 
-Core business knowledge.
+Core reusable business knowledge.
 
-This is the primary content that AI uses.
+Examples
 
-Examples:
+Company
 
-- Company information
-- Factory capability
-- Product knowledge
-- Website architecture
-- SEO strategy
+Factory
+
+Website
+
+Products
+
+SEO
+
+Sales
+
+Markets
 
 ---
 
 ## 3. Business Rules
 
-Company standards.
+Internal company rules.
 
-Internal rules.
+Standards.
 
-Operational constraints.
+Restrictions.
 
 Things AI must always follow.
 
@@ -78,13 +121,11 @@ Things AI must always follow.
 
 ## 4. Best Practices
 
-Recommended methods.
+Industry recommendations.
 
-Industry best practices.
+Internal experience.
 
-Internal recommendations.
-
-Lessons learned.
+Optimization suggestions.
 
 ---
 
@@ -96,19 +137,17 @@ Secondary Keywords
 
 Business Keywords
 
-These keywords help future AI retrieval and semantic search.
+These keywords improve semantic retrieval.
 
 ---
 
 ## 6. AI Usage Rules
 
-Define how AI should use this document.
+Define
 
-Include:
+When should AI load this document?
 
-When should it be loaded?
-
-When should it NOT be loaded?
+When should AI ignore this document?
 
 Typical business scenarios.
 
@@ -116,57 +155,77 @@ Typical business scenarios.
 
 ## 7. Input
 
-Specify which tasks require this knowledge.
+Which tasks require this knowledge?
 
-Examples:
+Examples
 
-- Blog Writing
-- Product Description
-- Solution Page
-- Quotation
-- Customer Development
-- Website Content
-- SEO
-- Factory Introduction
+Blog Writing
+
+Quotation
+
+Website
+
+SEO
+
+Product Page
+
+Solution Page
+
+Customer Development
+
+Factory Introduction
 
 ---
 
 ## 8. Output
 
-Specify which deliverables this knowledge influences.
+Which deliverables depend on this knowledge?
 
-Examples:
+Examples
 
-- Blog
-- Product CMS
-- Product Specification
-- Solution Page
-- Quotation
-- Email
-- Landing Page
-- Catalog
+Blog
+
+Product CMS
+
+Quotation
+
+Email
+
+Catalog
+
+Landing Page
+
+Solution Page
+
+Product Specification
 
 ---
 
 ## 9. Called By
 
-List AI Agents that normally use this knowledge.
+List AI Agents.
 
-Examples:
+Examples
 
-- AI Sales Director
-- SEO Growth Agent
-- Content Creator Agent
-- Product Marketing Agent
-- Automation Manager Agent
+AI Sales Director
+
+SEO Growth Agent
+
+Content Creator Agent
+
+Automation Manager Agent
+
+Product Marketing Agent
+
+Customer Success Agent
 
 ---
 
 ## 10. Dependencies
 
-List related Knowledge documents.
+Knowledge files usually loaded together.
 
-Examples:
+Example
 
 company-profile.md
 
@@ -180,7 +239,7 @@ seo-content-rules.md
 
 ## 11. Priority
 
-Define loading priority.
+Loading priority.
 
 ★★★★★ Critical
 
@@ -192,15 +251,15 @@ Define loading priority.
 
 ★ Optional
 
-The Prompt Builder should always load higher-priority documents first.
+Prompt Builder should always load higher-priority knowledge first.
 
 ---
 
 ## 12. Related Documents
 
-List related files outside the Knowledge directory.
+Related files outside Knowledge.
 
-Examples:
+Examples
 
 templates/
 
@@ -216,15 +275,25 @@ agents/
 
 ## 13. Future Expansion
 
-Reserved for future AI capabilities.
+Reserved.
 
-Examples:
+Examples
 
-- RAG
-- Vector Search
-- AI Memory
-- Embeddings
-- Semantic Search
+RAG
+
+Vector Database
+
+Embeddings
+
+Knowledge Graph
+
+Semantic Search
+
+AI Memory
+
+Retrieval Score
+
+Confidence Score
 
 ---
 
@@ -242,14 +311,17 @@ Last Updated
 
 # Naming Rules
 
-Knowledge files should:
+Knowledge filenames must
 
-- Use lowercase letters
-- Use hyphens (-)
-- Be short
-- Clearly describe one business topic
+Use lowercase.
 
-Good Examples
+Use hyphens.
+
+Describe only one topic.
+
+Keep names concise.
+
+Examples
 
 company-profile.md
 
@@ -261,13 +333,13 @@ seo-content-rules.md
 
 Bad Examples
 
-company.md
-
 knowledge.md
 
-my document.md
+company.md
 
-factory_and_product.md
+myfile.md
+
+factory-product.md
 
 ---
 
@@ -275,91 +347,105 @@ factory_and_product.md
 
 Knowledge should contain
 
-- Facts
-- Standards
-- Long-term knowledge
-- Business processes
-- Company rules
-- Industry expertise
+Long-term information
+
+Company standards
+
+Business processes
+
+Industry expertise
+
+Manufacturing knowledge
+
+SEO knowledge
+
+Product knowledge
 
 Knowledge should NOT contain
 
-- Temporary notes
-- Daily tasks
-- Customer records
-- Personal opinions
-- One-time projects
-- Draft content
+Temporary tasks
+
+Meeting notes
+
+Daily records
+
+Customer records
+
+Draft articles
+
+Personal opinions
+
+Project-specific notes
 
 ---
 
 # Duplicate Prevention
 
-Every business rule should exist only once.
+Every business rule should exist in only one location.
 
-Never copy the same rule into multiple documents.
+Never duplicate content.
 
-Instead:
+Instead
 
 Reference the original Knowledge document.
 
-The Prompt Builder combines documents dynamically.
+Prompt Builder will assemble multiple documents dynamically.
 
 ---
 
 # AI Loading Strategy
 
-AI should never load the entire Knowledge Base.
+AI never loads the entire Knowledge Base.
 
-Instead:
+Workflow
 
-Step 1
-
-Understand the user's request.
+User Request
 
 ↓
 
-Step 2
-
-Select the correct AI Agent.
+Task Classification
 
 ↓
 
-Step 3
-
-Determine required Knowledge.
+Agent Selection
 
 ↓
 
-Step 4
-
-Load only required files.
+Knowledge Selection
 
 ↓
 
-Step 5
-
-Ignore unrelated Knowledge.
+Template Selection
 
 ↓
 
-Step 6
-
-Assemble temporary Prompt.
+Playbook Selection
 
 ↓
 
-Step 7
+Workflow Selection
 
-Generate output.
+↓
 
-This approach minimizes token usage and improves response quality.
+Prompt Assembly
+
+↓
+
+OpenAI API
+
+↓
+
+Structured Output
+
+Load only the required modules.
+
+Ignore everything else.
 
 ---
 
 # Knowledge Loading Priority
 
-The recommended loading order is:
+Always load in this order
 
 Standards
 
@@ -383,7 +469,15 @@ Playbooks
 
 Workflow
 
-This order should remain consistent across the entire AI System.
+↓
+
+Customer Context
+
+↓
+
+Memory
+
+This order should remain fixed.
 
 ---
 
@@ -391,9 +485,9 @@ This order should remain consistent across the entire AI System.
 
 Task
 
-Write a Bathroom Faucet Buying Guide.
+Write a Bathroom Faucet Buying Guide
 
-Prompt Builder loads:
+Prompt Builder loads
 
 ★★★★★ company-profile.md
 
@@ -415,28 +509,83 @@ quotation-rules.md
 
 sales-process.md
 
-factory-capability.md
+market-strategy.md
 
-No unnecessary knowledge should be loaded.
+Only relevant knowledge should be loaded.
+
+---
+
+# Token Optimization Rules
+
+To minimize token consumption
+
+Load only required documents.
+
+Never load duplicate knowledge.
+
+Keep every Knowledge file independent.
+
+Separate reusable rules.
+
+Store facts only once.
+
+Reference instead of copy.
+
+Prompt Builder should remove duplicate instructions automatically.
+
+---
+
+# AI Retrieval Rules
+
+Future retrieval methods may include
+
+Keyword Matching
+
+Metadata Search
+
+Vector Search
+
+Semantic Search
+
+Knowledge Graph
+
+RAG
+
+AI Memory
+
+Hybrid Retrieval
+
+The Knowledge structure should remain compatible with all future retrieval methods.
 
 ---
 
 # Future Roadmap
 
-Future versions may support:
+Future versions may introduce
 
-- AI Memory
-- Vector Database
-- Retrieval Scores
-- Metadata
-- Embedding IDs
-- Knowledge Tags
-- Auto Dependency Detection
-- Smart Knowledge Ranking
-- Semantic Search
-- Multi-Agent Knowledge Sharing
+Knowledge Tags
 
-The document structure should remain compatible with future AI technologies.
+Embedding IDs
+
+Vector IDs
+
+Knowledge Scores
+
+Retrieval Scores
+
+Confidence Scores
+
+Knowledge Ranking
+
+Dependency Detection
+
+Automatic Prompt Assembly
+
+Context Compression
+
+Multi-Agent Knowledge Sharing
+
+AI Memory Integration
 
 ---
 
@@ -450,17 +599,19 @@ Avoid duplication.
 
 Load only what is needed.
 
-Optimize tokens.
+Optimize every token.
 
-Keep knowledge independent.
+Keep knowledge modular.
 
-Think long-term.
+Design for long-term growth.
+
+Think like an AI Operating System.
 
 ---
 
 # Version
 
-Version: V2.0
+Version: V3.0
 
 Status: Active
 
