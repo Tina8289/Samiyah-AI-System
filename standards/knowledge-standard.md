@@ -2,19 +2,29 @@
 
 ## Overview
 
-This document defines the standard structure for every Knowledge document in the Samiyah AI System.
+This document defines the official standard for all Knowledge documents within the Samiyah AI System.
 
-All files inside the `knowledge/` directory must follow this specification.
+Every file stored in the `knowledge/` directory must follow this specification.
 
-The objective is to ensure consistency, improve AI retrieval efficiency, reduce duplicate knowledge, and support dynamic Prompt Assembly.
+The purpose of this standard is to ensure:
+
+- Consistent document structure
+- Efficient AI retrieval
+- Dynamic Prompt Assembly
+- Minimal token consumption
+- Easy maintenance
+- Future RAG compatibility
+
+Knowledge is considered a long-term business asset and should be reusable across all AI Agents.
 
 ---
 
 # Design Principles
 
-Every Knowledge document should follow these principles:
+Every Knowledge document must follow these principles.
 
 - Single Responsibility
+- Modular
 - Reusable
 - Independent
 - Maintainable
@@ -24,69 +34,139 @@ Every Knowledge document should follow these principles:
 
 Each document should describe only one business topic.
 
+Never mix multiple unrelated topics in one document.
+
 ---
 
 # Standard Document Structure
 
-Every Knowledge document should contain the following sections.
+Every Knowledge document should follow this structure.
 
 ## 1. Overview
 
-Briefly explain what this knowledge is.
+Brief introduction explaining the purpose of the document.
 
 ---
 
 ## 2. Business Knowledge
 
-The main knowledge content.
+Core business knowledge.
 
-This is the core information that AI will use.
+This is the primary content that AI uses.
+
+Examples:
+
+- Company information
+- Factory capability
+- Product knowledge
+- Website architecture
+- SEO strategy
 
 ---
 
 ## 3. Business Rules
 
-Define any company rules, standards, or constraints related to this topic.
+Company standards.
+
+Internal rules.
+
+Operational constraints.
+
+Things AI must always follow.
 
 ---
 
 ## 4. Best Practices
 
-Describe recommended methods and practical guidance.
+Recommended methods.
+
+Industry best practices.
+
+Internal recommendations.
+
+Lessons learned.
 
 ---
 
-## 5. AI Usage Rules
+## 5. Keywords
 
-Specify how AI should use this knowledge.
+Primary Keywords
+
+Secondary Keywords
+
+Business Keywords
+
+These keywords help future AI retrieval and semantic search.
+
+---
+
+## 6. AI Usage Rules
+
+Define how AI should use this document.
 
 Include:
 
-- When to load
-- When not to load
-- Typical use cases
+When should it be loaded?
+
+When should it NOT be loaded?
+
+Typical business scenarios.
 
 ---
 
-## 6. Called By
+## 7. Input
 
-List the AI Agents that may load this knowledge.
+Specify which tasks require this knowledge.
+
+Examples:
+
+- Blog Writing
+- Product Description
+- Solution Page
+- Quotation
+- Customer Development
+- Website Content
+- SEO
+- Factory Introduction
+
+---
+
+## 8. Output
+
+Specify which deliverables this knowledge influences.
+
+Examples:
+
+- Blog
+- Product CMS
+- Product Specification
+- Solution Page
+- Quotation
+- Email
+- Landing Page
+- Catalog
+
+---
+
+## 9. Called By
+
+List AI Agents that normally use this knowledge.
 
 Examples:
 
 - AI Sales Director
-- Content Creator Agent
 - SEO Growth Agent
+- Content Creator Agent
 - Product Marketing Agent
 - Automation Manager Agent
 
 ---
 
-## 7. Dependencies
+## 10. Dependencies
 
-List other Knowledge files that are commonly loaded together.
+List related Knowledge documents.
 
-Example:
+Examples:
 
 company-profile.md
 
@@ -94,11 +174,13 @@ brand-guidelines.md
 
 website-structure.md
 
+seo-content-rules.md
+
 ---
 
-## 8. Priority
+## 11. Priority
 
-Assign a loading priority.
+Define loading priority.
 
 ★★★★★ Critical
 
@@ -110,13 +192,13 @@ Assign a loading priority.
 
 ★ Optional
 
-The Prompt Builder should load higher-priority knowledge first.
+The Prompt Builder should always load higher-priority documents first.
 
 ---
 
-## 9. Related Documents
+## 12. Related Documents
 
-List related files.
+List related files outside the Knowledge directory.
 
 Examples:
 
@@ -128,9 +210,25 @@ workflows/
 
 standards/
 
+agents/
+
 ---
 
-## 10. Version
+## 13. Future Expansion
+
+Reserved for future AI capabilities.
+
+Examples:
+
+- RAG
+- Vector Search
+- AI Memory
+- Embeddings
+- Semantic Search
+
+---
+
+## 14. Version
 
 Version
 
@@ -144,50 +242,68 @@ Last Updated
 
 # Naming Rules
 
-Each Knowledge file should:
+Knowledge files should:
 
-- Focus on one topic only.
-- Avoid combining unrelated knowledge.
-- Use lowercase filenames.
-- Use hyphens (-) instead of spaces.
-- Keep filenames short and descriptive.
+- Use lowercase letters
+- Use hyphens (-)
+- Be short
+- Clearly describe one business topic
 
-Examples:
+Good Examples
 
 company-profile.md
 
+website-structure.md
+
 factory-capability.md
 
-website-structure.md
+seo-content-rules.md
+
+Bad Examples
+
+company.md
+
+knowledge.md
+
+my document.md
+
+factory_and_product.md
 
 ---
 
 # Content Rules
 
-Knowledge should contain:
+Knowledge should contain
 
 - Facts
-- Company standards
-- Reusable information
-- Long-term business knowledge
+- Standards
+- Long-term knowledge
+- Business processes
+- Company rules
+- Industry expertise
 
-Knowledge should NOT contain:
+Knowledge should NOT contain
 
-- Temporary tasks
-- Daily notes
+- Temporary notes
+- Daily tasks
+- Customer records
 - Personal opinions
-- Customer-specific information
-- One-time project content
+- One-time projects
+- Draft content
 
 ---
 
 # Duplicate Prevention
 
-A business rule should exist in only one Knowledge document.
+Every business rule should exist only once.
 
-If another document requires the same information, reference it instead of copying it.
+Never copy the same rule into multiple documents.
 
-The Prompt Builder is responsible for combining multiple Knowledge documents during runtime.
+Instead:
+
+Reference the original Knowledge document.
+
+The Prompt Builder combines documents dynamically.
 
 ---
 
@@ -195,24 +311,89 @@ The Prompt Builder is responsible for combining multiple Knowledge documents dur
 
 AI should never load the entire Knowledge Base.
 
-Instead, it should:
+Instead:
 
-1. Identify the task.
-2. Select the required AI Agent.
-3. Load only the relevant Knowledge documents.
-4. Ignore unrelated Knowledge.
+Step 1
 
-This minimizes token usage and improves response quality.
+Understand the user's request.
+
+↓
+
+Step 2
+
+Select the correct AI Agent.
+
+↓
+
+Step 3
+
+Determine required Knowledge.
+
+↓
+
+Step 4
+
+Load only required files.
+
+↓
+
+Step 5
+
+Ignore unrelated Knowledge.
+
+↓
+
+Step 6
+
+Assemble temporary Prompt.
+
+↓
+
+Step 7
+
+Generate output.
+
+This approach minimizes token usage and improves response quality.
+
+---
+
+# Knowledge Loading Priority
+
+The recommended loading order is:
+
+Standards
+
+↓
+
+Agent
+
+↓
+
+Knowledge
+
+↓
+
+Templates
+
+↓
+
+Playbooks
+
+↓
+
+Workflow
+
+This order should remain consistent across the entire AI System.
 
 ---
 
 # Example
 
-Task:
+Task
 
-Write a faucet buying guide.
+Write a Bathroom Faucet Buying Guide.
 
-Load:
+Prompt Builder loads:
 
 ★★★★★ company-profile.md
 
@@ -224,36 +405,62 @@ Load:
 
 ★★★★ product-database.md
 
+★★★★ content-strategy.md
+
 ★★ customer-profile.md
 
-Do NOT load:
+Ignored
 
 quotation-rules.md
 
 sales-process.md
 
-market-strategy.md
+factory-capability.md
+
+No unnecessary knowledge should be loaded.
 
 ---
 
-# Future Expansion
+# Future Roadmap
 
-Future versions may include:
+Future versions may support:
 
-- Tags
-- Metadata
-- Vector Index
-- Embedding IDs
+- AI Memory
+- Vector Database
 - Retrieval Scores
-- AI Memory References
+- Metadata
+- Embedding IDs
+- Knowledge Tags
+- Auto Dependency Detection
+- Smart Knowledge Ranking
+- Semantic Search
+- Multi-Agent Knowledge Sharing
 
-These fields will support advanced RAG and semantic search.
+The document structure should remain compatible with future AI technologies.
+
+---
+
+# Core Philosophy
+
+Write once.
+
+Reuse everywhere.
+
+Avoid duplication.
+
+Load only what is needed.
+
+Optimize tokens.
+
+Keep knowledge independent.
+
+Think long-term.
 
 ---
 
 # Version
 
-Version: V1.0
+Version: V2.0
 
 Status: Active
 
