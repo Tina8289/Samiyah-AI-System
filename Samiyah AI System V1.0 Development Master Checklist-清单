@@ -1,0 +1,205 @@
+很好，我们现在正式进入**软件开发模式**，不再是聊天模式。
+
+这份清单以后就是 **V1.0 开发主计划**，以后我们只更新这份计划，不再推翻架构。
+
+---
+
+# Samiyah AI System V1.0 Development Master Checklist
+
+## 一、Foundation（基础层）
+
+### docs
+
+```text
+✅ ai-operating-system-blueprint.md
+✅ automation-roadmap.md
+✅ data-flow.md
+✅ folder-structure.md
+✅ prompt-assembly.md
+✅ system-architecture.md
+✅ system-overview.md
+
+Status：Frozen ✅
+```
+
+---
+
+### standards
+
+```text
+⬜ 待盘点
+```
+
+---
+
+## 二、AI Intelligence（AI 智能层）
+
+### knowledge
+
+```text
+✅ brand-guidelines.md
+✅ company-profile.md
+✅ company-vision.md
+✅ content-strategy.md
+✅ customer-profile.md
+✅ factory-capability.md
+✅ market-strategy.md
+✅ product-database.md
+✅ quotation-rules.md
+✅ sales-process.md
+✅ seo-content-rules.md
+✅ website-structure.md
+
+Status：Frozen ✅
+```
+
+---
+
+### templates
+
+```text
+✅ blog-cms-template.md
+✅ solution-page-template.md
+
+Future：
+□ product-cms-template.md
+□ quotation-template.md
+□ product-specification-template.md
+□ project-case-template.md
+□ email-template.md
+
+Status：Active 🟡
+```
+
+---
+
+### agents
+
+```text
+✅ ai-sales-director.md
+✅ automation-manager-agent.md
+✅ content-creator-agent.md
+✅ product-marketing-agent.md
+✅ seo-growth-agent.md
+
+Future：
+□ customer-success-agent.md
+□ website-manager-agent.md
+□ market-research-agent.md
+
+Status：Active 🟡
+```
+
+---
+
+## 三、Business Operations（业务层）
+
+### workflows
+
+```text
+✅ ai-content-production-workflow.md
+✅ make-wix-blog-automation.md
+
+Future：
+□ quotation-workflow.md
+□ product-upload-workflow.md
+□ customer-follow-up-workflow.md
+□ lead-generation-workflow.md
+□ seo-workflow.md
+□ image-generation-workflow.md
+
+Status：Active 🟡
+```
+
+---
+
+### customer-management
+
+```text
+✅ customer-follow-up-rules.md
+✅ customer-id-rules.md
+✅ customer-status-rules.md
+
+Future：
+□ customer-tag-rules.md
+□ customer-scoring-rules.md
+
+Status：Active 🟡
+```
+
+---
+
+## 四、Business Data（业务数据层）
+
+### customers
+
+```text
+⬜ 未开始
+```
+
+---
+
+### products
+
+```text
+⬜ 未开始
+```
+
+---
+
+### markets
+
+```text
+⬜ 未开始
+```
+
+---
+
+## 五、Resources（资源层）
+
+### assets
+
+```text
+⬜ 未开始
+```
+
+---
+
+### archive
+
+```text
+⬜ 未开始
+```
+
+---
+
+# V1.0 开发原则（冻结）
+
+```text
+1. 一级目录不再修改。
+
+2. 已建立文件不再删除。
+
+3. 已建立文件名不再修改。
+
+4. 新功能优先补充已有文件。
+
+5. 确需新增文件时，先更新 Master Checklist，再创建文件。
+
+6. 每次只开发一个文件，完成后更新 Checklist。
+```
+
+---
+
+## 🚀 下一步（不是今天立即创建）
+
+我们先把**剩余一级目录盘点完成**：
+
+1. `standards/`
+2. `customers/`（如果已建）
+3. `products/`（如果已建）
+4. `markets/`（如果已建）
+5. `assets/`（如果已建）
+6. `archive/`（如果已建）
+
+全部盘点结束后，这份 **Master Checklist** 就正式冻结，作为整个 **Samiyah AI System V1.0** 的开发总计划。以后我们每完成一个文件，只更新这份清单，不再重新设计架构。
