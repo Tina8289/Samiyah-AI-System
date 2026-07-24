@@ -2,24 +2,23 @@
 
 ## Overview
 
-This document defines the official standard for every Knowledge document within the Samiyah AI System.
+This document defines the official standard for all Knowledge documents within the Samiyah AI System.
 
-All files inside the knowledge directory must follow this specification.
+Every file inside the `knowledge/` directory must follow this specification.
 
-The objective is to ensure:
+The objectives are:
 
-- Consistent document structure
+- Standardized document structure
 - Efficient AI retrieval
+- Modular knowledge management
 - Dynamic Prompt Assembly
 - Low token consumption
 - High maintainability
-- Future RAG compatibility
-- AI Memory compatibility
-- Multi-Agent collaboration
+- Future AI compatibility
 
-Knowledge is considered a long-term business asset.
+Knowledge is a long-term business asset.
 
-It should be written once and reused everywhere.
+Write once. Reuse everywhere.
 
 ---
 
@@ -37,15 +36,17 @@ Every Knowledge document must follow these principles.
 - Human Readable
 - Machine Readable
 
-One document should describe only one business topic.
+Each document should describe only one business topic.
 
 Never combine unrelated knowledge.
 
+Every business rule should exist in only one location.
+
 ---
 
-# Standard Metadata
+# Metadata Standard
 
-Every Knowledge document should begin with metadata.
+Every Knowledge document should begin with the following metadata.
 
 ```yaml
 id:
@@ -71,7 +72,7 @@ related_workflows:
 last_updated:
 ```
 
-Metadata allows future AI systems to identify the document without reading the entire file.
+Metadata enables future AI systems to identify and retrieve documents without reading the entire file.
 
 ---
 
@@ -87,35 +88,29 @@ Explain what this knowledge describes.
 
 ## 2. Business Knowledge
 
-Core reusable business knowledge.
+Reusable business knowledge.
 
 Examples
 
-Company
-
-Factory
-
-Website
-
-Products
-
-SEO
-
-Sales
-
-Markets
+- Company
+- Factory
+- Website
+- Products
+- SEO
+- Sales
+- Markets
 
 ---
 
 ## 3. Business Rules
 
-Internal company rules.
+Company standards.
 
-Standards.
+Internal rules.
 
 Restrictions.
 
-Things AI must always follow.
+Instructions AI must always follow.
 
 ---
 
@@ -131,25 +126,23 @@ Optimization suggestions.
 
 ## 5. Keywords
 
-Primary Keywords
+Include:
 
-Secondary Keywords
+- Primary Keywords
+- Secondary Keywords
+- Business Keywords
 
-Business Keywords
-
-These keywords improve semantic retrieval.
+These improve semantic retrieval.
 
 ---
 
 ## 6. AI Usage Rules
 
-Define
+Define:
 
-When should AI load this document?
-
-When should AI ignore this document?
-
-Typical business scenarios.
+- When AI should load this document.
+- When AI should ignore this document.
+- Typical business scenarios.
 
 ---
 
@@ -159,21 +152,15 @@ Which tasks require this knowledge?
 
 Examples
 
-Blog Writing
-
-Quotation
-
-Website
-
-SEO
-
-Product Page
-
-Solution Page
-
-Customer Development
-
-Factory Introduction
+- Blog Writing
+- Product Page
+- Solution Page
+- Product Specification
+- Website
+- SEO
+- Customer Development
+- Factory Introduction
+- Quotation
 
 ---
 
@@ -183,57 +170,41 @@ Which deliverables depend on this knowledge?
 
 Examples
 
-Blog
-
-Product CMS
-
-Quotation
-
-Email
-
-Catalog
-
-Landing Page
-
-Solution Page
-
-Product Specification
+- Blog
+- Product CMS
+- Solution Page
+- Product Specification
+- Quotation
+- Email
+- Catalog
+- Landing Page
 
 ---
 
 ## 9. Called By
 
-List AI Agents.
+List the AI Agents that normally use this knowledge.
 
 Examples
 
-AI Sales Director
-
-SEO Growth Agent
-
-Content Creator Agent
-
-Automation Manager Agent
-
-Product Marketing Agent
-
-Customer Success Agent
+- AI Sales Director
+- SEO Growth Agent
+- Content Creator Agent
+- Product Marketing Agent
+- Automation Manager Agent
 
 ---
 
 ## 10. Dependencies
 
-Knowledge files usually loaded together.
+List Knowledge documents commonly loaded together.
 
 Example
 
-company-profile.md
-
-brand-guidelines.md
-
-website-structure.md
-
-seo-content-rules.md
+- company-profile.md
+- brand-guidelines.md
+- website-structure.md
+- seo-content-rules.md
 
 ---
 
@@ -251,153 +222,78 @@ Loading priority.
 
 ★ Optional
 
-Prompt Builder should always load higher-priority knowledge first.
+Prompt Assembly should always load higher-priority knowledge first.
 
 ---
 
 ## 12. Related Documents
 
-Related files outside Knowledge.
+List related documents outside the Knowledge directory.
 
 Examples
 
-templates/
-
-playbooks/
-
-workflows/
-
-standards/
-
-agents/
-
----
-
-## 13. Future Expansion
-
-Reserved.
-
-Examples
-
-RAG
-
-Vector Database
-
-Embeddings
-
-Knowledge Graph
-
-Semantic Search
-
-AI Memory
-
-Retrieval Score
-
-Confidence Score
-
----
-
-## 14. Version
-
-Version
-
-Status
-
-Owner
-
-Last Updated
+- templates/
+- playbooks/
+- workflows/
+- standards/
+- agents/
 
 ---
 
 # Naming Rules
 
-Knowledge filenames must
+Knowledge filenames must:
 
-Use lowercase.
-
-Use hyphens.
-
-Describe only one topic.
-
-Keep names concise.
+- Use lowercase.
+- Use hyphens.
+- Describe only one topic.
+- Keep names concise.
 
 Examples
 
-company-profile.md
+- company-profile.md
+- website-structure.md
+- factory-capability.md
+- seo-content-rules.md
 
-website-structure.md
+Avoid names such as:
 
-factory-capability.md
-
-seo-content-rules.md
-
-Bad Examples
-
-knowledge.md
-
-company.md
-
-myfile.md
-
-factory-product.md
+- knowledge.md
+- company.md
+- myfile.md
+- factory-product.md
 
 ---
 
 # Content Rules
 
-Knowledge should contain
+Knowledge should contain:
 
-Long-term information
+- Long-term information
+- Company standards
+- Business processes
+- Industry expertise
+- Manufacturing knowledge
+- SEO knowledge
+- Product knowledge
 
-Company standards
+Knowledge should NOT contain:
 
-Business processes
-
-Industry expertise
-
-Manufacturing knowledge
-
-SEO knowledge
-
-Product knowledge
-
-Knowledge should NOT contain
-
-Temporary tasks
-
-Meeting notes
-
-Daily records
-
-Customer records
-
-Draft articles
-
-Personal opinions
-
-Project-specific notes
-
----
-
-# Duplicate Prevention
-
-Every business rule should exist in only one location.
-
-Never duplicate content.
-
-Instead
-
-Reference the original Knowledge document.
-
-Prompt Builder will assemble multiple documents dynamically.
+- Temporary tasks
+- Meeting notes
+- Daily records
+- Customer records
+- Draft articles
+- Personal opinions
+- Project-specific notes
 
 ---
 
 # AI Loading Strategy
 
-AI never loads the entire Knowledge Base.
+AI should never load the entire Knowledge Base.
 
-Workflow
+The loading process should follow this sequence:
 
 User Request
 
@@ -437,15 +333,15 @@ OpenAI API
 
 Structured Output
 
-Load only the required modules.
+Only load the required modules.
 
-Ignore everything else.
+Ignore all unrelated documents.
 
 ---
 
-# Knowledge Loading Priority
+# Loading Priority
 
-Always load in this order
+Always load modules in the following order:
 
 Standards
 
@@ -477,141 +373,28 @@ Customer Context
 
 Memory
 
-This order should remain fixed.
-
----
-
-# Example
-
-Task
-
-Write a Bathroom Faucet Buying Guide
-
-Prompt Builder loads
-
-★★★★★ company-profile.md
-
-★★★★★ brand-guidelines.md
-
-★★★★★ website-structure.md
-
-★★★★★ seo-content-rules.md
-
-★★★★ product-database.md
-
-★★★★ content-strategy.md
-
-★★ customer-profile.md
-
-Ignored
-
-quotation-rules.md
-
-sales-process.md
-
-market-strategy.md
-
-Only relevant knowledge should be loaded.
+This loading order should remain consistent across the entire system.
 
 ---
 
 # Token Optimization Rules
 
-To minimize token consumption
+To minimize token consumption:
 
-Load only required documents.
+- Load only required documents.
+- Never load duplicate knowledge.
+- Keep every Knowledge document independent.
+- Store facts only once.
+- Reference instead of copy.
+- Reuse existing knowledge whenever possible.
 
-Never load duplicate knowledge.
-
-Keep every Knowledge file independent.
-
-Separate reusable rules.
-
-Store facts only once.
-
-Reference instead of copy.
-
-Prompt Builder should remove duplicate instructions automatically.
-
----
-
-# AI Retrieval Rules
-
-Future retrieval methods may include
-
-Keyword Matching
-
-Metadata Search
-
-Vector Search
-
-Semantic Search
-
-Knowledge Graph
-
-RAG
-
-AI Memory
-
-Hybrid Retrieval
-
-The Knowledge structure should remain compatible with all future retrieval methods.
-
----
-
-# Future Roadmap
-
-Future versions may introduce
-
-Knowledge Tags
-
-Embedding IDs
-
-Vector IDs
-
-Knowledge Scores
-
-Retrieval Scores
-
-Confidence Scores
-
-Knowledge Ranking
-
-Dependency Detection
-
-Automatic Prompt Assembly
-
-Context Compression
-
-Multi-Agent Knowledge Sharing
-
-AI Memory Integration
-
----
-
-# Core Philosophy
-
-Write once.
-
-Reuse everywhere.
-
-Avoid duplication.
-
-Load only what is needed.
-
-Optimize every token.
-
-Keep knowledge modular.
-
-Design for long-term growth.
-
-Think like an AI Operating System.
+Prompt Assembly should automatically eliminate duplicate instructions before sending the final prompt.
 
 ---
 
 # Version
 
-Version: V3.0
+Version: V1.0
 
 Status: Active
 
